@@ -28,7 +28,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalkYellow(`
+  console.log(chalkRainbow(`
 ───────────▄▄▄▄▄▄▄▄▄───────────
 ░██████╗░█████╗░███████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -39,7 +39,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 By : ${('Vicenzo')}
 `));
 
-  const auth = rs.question(chalkYellow('Enter Auth Token : '));
+  const auth = rs.question(chalkRainbow('Enter Auth Token : '));
   console.log('');
 
   while (true) {
