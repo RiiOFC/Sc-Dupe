@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 const chalk = require('chalk');
 const rs = require('readline-sync');
-const chalkRainbow = require('chalk-rainbow')
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -29,13 +28,12 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 (async () => {
 
   console.log(`
-───────────▄▄▄▄▄▄▄▄▄───────────
-░██████╗░█████╗░███████╗███████╗
-██╔════╝██╔══██╗██╔════╝██╔════╝
-╚█████╗░███████║█████╗░░█████╗░░
-░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░
-██████╔╝██║░░██║██║░░░░░███████╗
-╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
+██╗   ██╗███████╗ ██████╗████████╗ ██████╗ ██████╗ 
+██║   ██║██╔════╝██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║   ██║█████╗  ██║        ██║   ██║   ██║██████╔╝
+╚██╗ ██╔╝██╔══╝  ██║        ██║   ██║   ██║██╔══██╗
+ ╚████╔╝ ███████╗╚██████╗   ██║   ╚██████╔╝██║  ██║
+  ╚═══╝  ╚══════╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝                                                 
 By : ${chalk.bold('Vicenzo#3819')}
 `);
 
@@ -60,7 +58,7 @@ By : ${chalk.bold('Vicenzo#3819')}
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
-      console.log(chalkRainbow(`\r
+      console.log(chalk.bgCyan(`\r
 ♨  [${moment().format('HH:mm:ss')}]  -
 →  ${(`Negara By Vicenzo : ${country}`)}
 →  ${(`Nama By Vicenzo : ${username}`)}
