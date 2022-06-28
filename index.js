@@ -36,10 +36,10 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 ░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░
 ██████╔╝██║░░██║██║░░░░░███████╗
 ╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
-By : ${('Vicenzo')}
+By : ${chalk.bold(chalk.bgPurple('Vicenzo')}
 `);
 
-  const auth = rs.question(chalk.bgCyan('Enter Auth Token : '));
+  const auth = rs.question(chalk.Cyan('Enter Auth Token : '));
   console.log('');
 
   while (true) {
