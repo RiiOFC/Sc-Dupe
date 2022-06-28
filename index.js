@@ -28,7 +28,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalkRainbow(`
+  console.log(`
 ───────────▄▄▄▄▄▄▄▄▄───────────
 ░██████╗░█████╗░███████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -39,7 +39,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 By : ${('Vicenzo')}
 `));
 
-  const auth = rs.question(chalkRainbow('Enter Auth Token : '));
+  const auth = rs.question('Enter Auth Token : '));
   console.log('');
 
   while (true) {
@@ -47,7 +47,7 @@ By : ${('Vicenzo')}
     const result = await GoStumble(auth);
     if (!result) {
 
-      console.log(chalkRainbow(`\r[ ${moment().format('HH:mm:ss')} ] Auth Sudah Expired !`));
+      console.log(chalk.bgRed(`\r[ ${moment().format('HH:mm:ss')} ] Auth Sudah Expired !`));
 
     } else if (result.includes('User')) {
 
