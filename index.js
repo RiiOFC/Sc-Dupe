@@ -36,7 +36,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 ░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░
 ██████╔╝██║░░██║██║░░░░░███████╗
 ╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
-By : ${chalk.Purple.bold('Vicenzo')}
+By : ${chalk.bold('Vicenzo#3819')}
 `);
 
   const auth = rs.question(chalk.Cyan('Enter Auth Token : '));
