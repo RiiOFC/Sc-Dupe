@@ -39,7 +39,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 By : ${chalk.bold('Vicenzo#3819')}
 `);
 
-  const auth = rs.question('Enter Auth Token : ');
+  const auth = rs.question(chalk.bgYellow('Enter Auth Token : ');
   console.log('STARTING');
 
   while (true) {
@@ -72,7 +72,7 @@ By : ${chalk.bold('Vicenzo#3819')}
       await sleep(6500);
 
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`Mampus Ke Banned Makanya jangan brutal`));
+      console.log(chalk.bgRed(`Your account has been banned`));
       break;
     }
   }
