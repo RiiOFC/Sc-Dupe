@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 const chalk = require('chalk');
 const rs = require('readline-sync');
-const chalkRainbow = require('chalk-rainbow')
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -28,7 +27,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalkRainbow(`
+  console.log(`
 ───────────▄▄▄▄▄▄▄▄▄───────────
 ░██████╗░█████╗░███████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -39,7 +38,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 By : ${('Vicenzo')}
 `));
 
-  const auth = rs.question(chalkRainbow('Enter Auth Token : '));
+  const auth = rs.question('Enter Auth Token : '));
   console.log('');
 
   while (true) {
@@ -47,7 +46,7 @@ By : ${('Vicenzo')}
     const result = await GoStumble(auth);
     if (!result) {
 
-      console.log(chalkRainbow(`\r[ ${moment().format('HH:mm:ss')} ] Auth Expired !`));
+      console.log(chalk.bgRed`\r[ ${moment().format('HH:mm:ss')} ] Auth Expired !`));
 
     } else if (result.includes('User')) {
 
@@ -57,7 +56,7 @@ By : ${('Vicenzo')}
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
-      console.log(chalkRainbow(`\r
+      console.log(`\r
 -  [${moment().format('HH:mm:ss')}]  -
 >  ${(`Negara By Vicenzo : ${country}`)}
 >  ${(`Nama By Vicenzo : ${username}`)}  
