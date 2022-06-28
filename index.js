@@ -37,7 +37,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 ██████╔╝██║░░██║██║░░░░░███████╗
 ╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
 By : ${('Vicenzo')}
-`));
+`);
 
   const auth = rs.question('Enter Auth Token : '));
   console.log('');
