@@ -28,7 +28,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 (async () => {
 
-  console.log(chalk.Purple`
+  console.log(`
 ───────────▄▄▄▄▄▄▄▄▄───────────
 ░██████╗░█████╗░███████╗███████╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -36,11 +36,11 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 ░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░
 ██████╔╝██║░░██║██║░░░░░███████╗
 ╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚══════╝
-By : ${chalk.bold('Vicenzo')}
+By : ${chalk.Purple.bold('Vicenzo')}
 `);
 
   const auth = rs.question(chalk.Cyan('Enter Auth Token : '));
-  console.log('');
+  console.log('STARTING');
 
   while (true) {
 
@@ -48,26 +48,31 @@ By : ${chalk.bold('Vicenzo')}
     if (!result) {
 
       console.log(chalk.bgRed(`\r[ ${moment().format('HH:mm:ss')} ] Auth Sudah Expired !`));
+      Break
 
     } else if (result.includes('User')) {
 
       const data = JSON.parse(result);
       const username = data.User.Username;
       const country = data.User.Country;
+      const tokenPass = data.User.BattlePass.PassTokens;
+      const exp = data.User.Experience;
       const trophy = data.User.SkillRating;
       const crown = data.User.Crowns;
 
       console.log(chalkRainbow(`\r
--  [${moment().format('HH:mm:ss')}]  -
->  ${(`Negara By Vicenzo : ${country}`)}
->  ${(`Nama By Vicenzo : ${username}`)}  
->  ${(`Piala By Vicenzo : ${trophy}`)}  
->  ${(`Mahkota By Vicenzo : ${crown}`)}
->  ${(`Status : Success !`)}`));
-      await sleep(5000);
+♨  [${moment().format('HH:mm:ss')}]  -
+→  ${(`Negara By Vicenzo : ${country}`)}
+→  ${(`Nama By Vicenzo : ${username}`)}
+→  ${(`Pass Star By Vicenzo : ${tokenPass}`)}
+→  ${(`Exp By Vicenzo: ${exp}`)}  
+→  ${(`Tropy By Vicenzo : ${trophy}`)}  
+→  ${(`Crown By Vicenzo : ${crown}`)}
+→  ${(`Status : ✔ Success`)}`));
+      await sleep(6500);
 
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`Mampus Banned Makanya jangan brutal`));
+      console.log(chalk.bgRed(`Mampus Ke Banned Makanya jangan brutal`));
       break;
     }
   }
